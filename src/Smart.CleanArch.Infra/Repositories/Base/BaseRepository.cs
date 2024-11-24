@@ -34,6 +34,19 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class
     public async Task<T?> GetByIdAsync(T entity) =>
         await _dbSet.FirstOrDefaultAsync(x => x.Equals(entity));
 
+    public async Task<T?> GetByIdTenanteAsync(T entity)
+    {
+        string tenante = entity.GetType().GetProperty("Tenante")?.GetValue(entity)?.ToString();
+        int id = (int)entity.GetType().GetProperty("Id")?.GetValue(entity);
+
+        if (string.IsNullOrEmpty(tenante))
+            return null;
+
+        T retorno = await _dbSet.FirstOrDefaultAsync(x =>
+            EF.Property<string>(x, "Tenante").ToLower() == tenante.ToLower() && EF.Property<int>(x, "Id") == id);
+
+        return retorno;
+    }
 
     public async Task UpdateAsync(T entity)
     {

@@ -29,15 +29,17 @@ namespace Smart.CleanArch.API.Controllers
         }
 
         /// <summary>
-        /// Busca por uma pessoa informando o Tenante(GUID)
+        /// Busca por uma pessoa informando o Id(int) e Tenante(GUID)
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="tenante"></param>
         /// <returns></returns>
         [HttpGet("buscar-tenante")]
-        public async Task<ActionResult<PessoasResponse>> GetByTenante(Guid tenante)
+        public async Task<ActionResult<PessoasResponse>> GetByTenante(int id, Guid tenante)
         {
             PessoaPesquisaRequest pesquisaRequest = new()
             {
+                Id = id,
                 Tenante = tenante
             };
 

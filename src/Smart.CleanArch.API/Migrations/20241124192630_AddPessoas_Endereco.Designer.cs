@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Smart.CleanArch.Infra.Data;
 
@@ -10,9 +11,11 @@ using Smart.CleanArch.Infra.Data;
 namespace Smart.CleanArch.API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241124192630_AddPessoas_Endereco")]
+    partial class AddPessoas_Endereco
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
@@ -34,12 +37,12 @@ namespace Smart.CleanArch.API.Migrations
                     b.Property<DateTime>("DataAtualizado")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2024, 11, 24, 16, 28, 0, 40, DateTimeKind.Local).AddTicks(5937));
+                        .HasDefaultValue(new DateTime(2024, 11, 24, 16, 26, 29, 688, DateTimeKind.Local).AddTicks(2583));
 
                     b.Property<DateTime>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2024, 11, 24, 16, 28, 0, 36, DateTimeKind.Local).AddTicks(3746));
+                        .HasDefaultValue(new DateTime(2024, 11, 24, 16, 26, 29, 684, DateTimeKind.Local).AddTicks(6407));
 
                     b.Property<string>("Logradouro")
                         .IsRequired()
@@ -67,12 +70,12 @@ namespace Smart.CleanArch.API.Migrations
                     b.Property<DateTime>("DataAtualizado")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2024, 11, 24, 16, 28, 0, 44, DateTimeKind.Local).AddTicks(72));
+                        .HasDefaultValue(new DateTime(2024, 11, 24, 16, 26, 29, 691, DateTimeKind.Local).AddTicks(3832));
 
                     b.Property<DateTime>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2024, 11, 24, 16, 28, 0, 43, DateTimeKind.Local).AddTicks(9721));
+                        .HasDefaultValue(new DateTime(2024, 11, 24, 16, 26, 29, 691, DateTimeKind.Local).AddTicks(3507));
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -95,12 +98,12 @@ namespace Smart.CleanArch.API.Migrations
                     b.Property<DateTime>("DataAtualizado")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2024, 11, 24, 16, 28, 0, 46, DateTimeKind.Local).AddTicks(4387));
+                        .HasDefaultValue(new DateTime(2024, 11, 24, 16, 26, 29, 693, DateTimeKind.Local).AddTicks(6690));
 
                     b.Property<DateTime>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2024, 11, 24, 16, 28, 0, 46, DateTimeKind.Local).AddTicks(3929));
+                        .HasDefaultValue(new DateTime(2024, 11, 24, 16, 26, 29, 693, DateTimeKind.Local).AddTicks(6322));
 
                     b.Property<string>("Nome")
                         .IsRequired()

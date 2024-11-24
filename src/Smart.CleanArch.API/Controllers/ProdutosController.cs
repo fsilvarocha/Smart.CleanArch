@@ -43,7 +43,7 @@ namespace Smart.CleanArch.API.Controllers
                 Tenante = tenante
             };
 
-            ProdutosResponse Produtos = await _produtosServices.GetByIdAsync(pesquisaRequest);
+            ProdutosResponse Produtos = await _produtosServices.GetByIdTenanteAsync(pesquisaRequest);
             if (Produtos == null)
                 return NotFound();
 

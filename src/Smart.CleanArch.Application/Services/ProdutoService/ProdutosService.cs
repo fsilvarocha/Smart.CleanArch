@@ -57,6 +57,14 @@ public class ProdutosService : IProdutosServices
         return retorno;
     }
 
+    public async Task<ProdutosResponse> GetByIdTenanteAsync(ProdutosPesquisaRequest entity)
+    {
+        Produtos comando = _mapper.Map<Produtos>(entity);
+        Produtos produtos = await _produtosRepository.GetByIdTenanteAsync(comando);
+        ProdutosResponse retorno = _mapper.Map<ProdutosResponse>(produtos);
+        return retorno;
+    }
+
     public async Task UpdateAsync(ProdutosAtualizarRequest entity)
     {
 

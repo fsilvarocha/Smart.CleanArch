@@ -1,8 +1,9 @@
-﻿namespace Smart.CleanArch.Application.DataTransfer.Produto.Request
+﻿using Smart.CleanArch.Application.DataTransfer.Common;
+
+namespace Smart.CleanArch.Application.DataTransfer.Produto.Request
 {
-    public class ProdutosPesquisaRequest
+    public class ProdutosPesquisaRequest : BasePesquisaRequest
     {
-        public int Id { get; set; }
-        public Guid Tenante { get; set; }
+
     }
 }
